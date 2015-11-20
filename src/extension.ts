@@ -17,7 +17,17 @@ export function format(document: vscode.TextDocument, range: vscode.Range, optio
 	
 	var content = document.getText(range);
 	
-	var formatted = jsbeautify.css_beautify(content, {});
+	if (!options) {
+		options = { insertSpaces: true, tabSize: 4 };
+	}
+	
+	var beutifyOptions : jsbeautify.IBeautifyCSSOptions = {
+		indent_char: options.insertSpaces ? ' ' : '\t',
+		indent_size: options.insertSpaces ? options.tabSize : 1,
+		selector_separator_newline: false
+	}
+	
+	var formatted = jsbeautify.css_beautify(content, beutifyOptions);
 	if (formatted) {
 		result.push(new vscode.TextEdit(range, formatted));
 	}

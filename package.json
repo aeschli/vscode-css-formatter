@@ -2,11 +2,21 @@
 	"name": "vscode-css-formatter",
 	"displayName" : "CSS Formatter",
 	"description": "Formatter for CSS",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "aeschli",
     "galleryBanner": {
         "color": "#0000FF",
         "theme": "dark"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/aeschli/vscode-css-formatter/issues",
+        "email": "smcbreen@microsoft.com"
+    },
+    "homepage": "https://github.com/aeschli/vscode-css-formatter/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aeschli/vscode-css-formatter"
     },	
 	"engines": {
 		"vscode": "^0.10.1"

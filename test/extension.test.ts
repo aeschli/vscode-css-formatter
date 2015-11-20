@@ -22,7 +22,7 @@ suite("Extension Tests", () => {
 					editBuilder.replace(new vscode.Range(new vscode.Position(0, 0), new vscode.Position(textEditor.document.lineCount - 1, lastLineLength)), content);
 				}).then(() => {
 					try {
-						var result = myExtension.format(document, null, void 0);
+						var result = myExtension.format(document, null, { insertSpaces: true, tabSize: 4 });
 						assert.equal(result.length, 1);
 						assert.equal(result[0].newText, expected);
 						done();				
