@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import {EOL} from 'os';
 
 import jsbeautify = require('js-beautify');
 
@@ -47,8 +48,14 @@ export function format(context: vscode.ExtensionContext, document: vscode.TextDo
 
     let formatted = jsbeautify.css_beautify(content, beutifyOptions);
     if (formatted) {
+        //formatted = formatSassLessStatements(formatted);
+
         result.push(new vscode.TextEdit(range, formatted));
     }
 
     return result;
 };
+
+function formatSassLessStatements(sheet: string): string {
+    return sheet.replace(/^@.*;/gm, s => s + EOL);
+}

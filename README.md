@@ -1,6 +1,6 @@
 # VS Code Stylesheet Formatting
 
-This extension adds formatting to CSS, SASS, LESS. 
+This extension adds formatting to CSS, SASS, LESS using [JS Beautifier](https://github.com/beautify-web/js-beautify).
 
 Based on [CSS Formatter](https://marketplace.visualstudio.com/items?itemName=aeschli.vscode-css-formatter) extension.
 
