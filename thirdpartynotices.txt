@@ -1,9 +1,9 @@
 THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
-vscode-css-formatter
+vscode-stylesheet-formatter
  
 This project incorporates material from the projects listed below.  
 
-js-beautify (https://github.com/beautify-web/js-beautify), version": "1.5.10",
+js-beautify (https://github.com/beautify-web/js-beautify), version": "1.6.2",
 
 The MIT License (MIT)
 

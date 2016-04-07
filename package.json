@@ -1,28 +1,30 @@
 {
-	"name": "vscode-css-formatter",
-	"displayName" : "CSS Formatter",
-	"description": "Formatter for CSS",
-	"version": "0.0.2",
-	"publisher": "aeschli",
+	"name": "vscode-stylesheet-formatter",
+	"displayName" : "Stylesheet Formatter",
+	"description": "Formatter for CSS, SASS, LESS",
+	"version": "0.0.1",
+	"publisher": "dbalage",
+    "icon": "images/logo.png",
     "galleryBanner": {
-        "color": "#0000FF",
+        "color": "#eff1f3",
         "theme": "dark"
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/aeschli/vscode-css-formatter/issues",
-        "email": "smcbreen@microsoft.com"
+        "url": "https://github.com/dbalage/vscode-css-formatter/issues"
     },
-    "homepage": "https://github.com/aeschli/vscode-css-formatter/blob/master/README.md",
+    "homepage": "https://github.com/dbalage/vscode-css-formatter/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/aeschli/vscode-css-formatter"
+        "url": "https://github.com/dbalage/vscode-css-formatter"
     },	
 	"engines": {
 		"vscode": "^0.10.1"
 	},
 	"activationEvents": [
-		"onLanguage:css"
+		"onLanguage:css",
+		"onLanguage:sass",
+		"onLanguage:less"
 	],
 	"main": "./out/src/extension",
 	"scripts": {
@@ -30,10 +32,10 @@
 		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
 	},
 	"dependencies": {
-		"js-beautify": "^1.5.10"
+		"js-beautify": "^1.6.2"
 	},
 	"devDependencies": {
-		"typescript": "^1.6.2",
-		"vscode": "0.10.x"
+		"typescript": "*",
+		"vscode": "0.11.x"
 	}
 }
