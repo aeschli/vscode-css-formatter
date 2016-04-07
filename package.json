@@ -2,7 +2,7 @@
     "name": "vscode-stylesheet-formatter",
     "displayName": "Stylesheet Formatter",
     "description": "Formatter for CSS, SASS, LESS",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "publisher": "dbalage",
     "icon": "images/logo.png",
     "galleryBanner": {
