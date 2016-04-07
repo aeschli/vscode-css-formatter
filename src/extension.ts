@@ -17,9 +17,9 @@ export function activate(context: vscode.ExtensionContext) {
     }));
     context.subscriptions.push(vscode.languages.registerDocumentRangeFormattingEditProvider(languageSelectors, {
         provideDocumentRangeFormattingEdits: (document, range, options, token) => {
-            var start = new vscode.Position(0, 0);
-            var end = new vscode.Position(document.lineCount - 1, document.lineAt(document.lineCount - 1).text.length);
-            return format(context, document, new vscode.Range(start, end), options)
+            // var start = new vscode.Position(0, 0);
+            // var end = new vscode.Position(document.lineCount - 1, document.lineAt(document.lineCount - 1).text.length);
+            return format(context, document, range, options)
         }
     }));
 }
