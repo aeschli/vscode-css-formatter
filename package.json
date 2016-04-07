@@ -7,8 +7,11 @@
     "icon": "images/logo.png",
     "galleryBanner": {
         "color": "#eff1f3",
-        "theme": "dark"
+        "theme": "light"
     },
+    "categories": [
+        "Languages", "Other"
+    ],
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/dbalage/vscode-css-formatter/issues"

@@ -1,4 +1,4 @@
-vscode-css-formatting
+vscode-stylesheet-formatting
 
 The MIT License (MIT)
 

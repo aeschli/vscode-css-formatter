@@ -1,7 +1,7 @@
 THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
 vscode-stylesheet-formatter
  
-This project incorporates material from the projects listed below.  
+This project incorporates material from the projects listed below.
 
 js-beautify (https://github.com/beautify-web/js-beautify), version": "1.6.2",
 
