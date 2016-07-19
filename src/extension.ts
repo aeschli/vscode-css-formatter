@@ -5,7 +5,7 @@ import {EOL} from 'os';
 
 import jsbeautify = require('js-beautify');
 
-const languageSelectors = ['css', 'sass', 'less'];
+const languageSelectors = ['css', 'sass', 'less', 'scss'];
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
