@@ -8,6 +8,7 @@
         "color": "#0000FF",
         "theme": "dark"
     },
+	"categories": ["Formatters"],
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/aeschli/vscode-css-formatter/issues",
