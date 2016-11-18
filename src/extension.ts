@@ -24,7 +24,7 @@ export function format(document: vscode.TextDocument, range: vscode.Range, optio
 	var beutifyOptions : jsbeautify.IBeautifyCSSOptions = {
 		indent_char: options.insertSpaces ? ' ' : '\t',
 		indent_size: options.insertSpaces ? options.tabSize : 1,
-		selector_separator_newline: false
+		selector_separator_newline: true
 	}
 	
 	var formatted = jsbeautify.css_beautify(content, beutifyOptions);
