@@ -1,23 +1,29 @@
 {
 	"name": "vscode-css-formatter",
-	"displayName" : "CSS Formatter",
+	"displayName": "CSS Formatter",
 	"description": "Formatter for CSS",
-	"version": "0.0.2",
+	"version": "1.0.0",
 	"publisher": "aeschli",
-    "galleryBanner": {
-        "color": "#0000FF",
-        "theme": "dark"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/aeschli/vscode-css-formatter/issues",
-        "email": "smcbreen@microsoft.com"
-    },
-    "homepage": "https://github.com/aeschli/vscode-css-formatter/blob/master/README.md",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/aeschli/vscode-css-formatter"
-    },	
+	"galleryBanner": {
+		"color": "#0000FF",
+		"theme": "dark"
+	},
+	"keywords": [
+		"multi-root ready"
+	],
+	"categories": [
+		"Formatters"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/aeschli/vscode-css-formatter/issues",
+		"email": "martinae@microsoft.com"
+	},
+	"homepage": "https://github.com/aeschli/vscode-css-formatter/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aeschli/vscode-css-formatter"
+	},
 	"engines": {
 		"vscode": "^0.10.1"
 	},
@@ -26,14 +32,19 @@
 	],
 	"main": "./out/src/extension",
 	"scripts": {
-		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
 	},
 	"dependencies": {
-		"js-beautify": "^1.5.10"
+		"js-beautify": "1.7.4"
 	},
 	"devDependencies": {
-		"typescript": "^1.6.2",
-		"vscode": "0.10.x"
+        "typescript": "^2.5.3",
+        "vscode": "^1.1.6",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"		
 	}
 }

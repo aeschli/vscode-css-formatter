@@ -8,26 +8,26 @@ import jsbeautify = require('js-beautify');
 export function format(document: vscode.TextDocument, range: vscode.Range, options:vscode.FormattingOptions) {
 	
 	if (range === null) {
-		var start = new vscode.Position(0, 0);
-		var end = new vscode.Position(document.lineCount - 1, document.lineAt(document.lineCount - 1).text.length);
+		let start = new vscode.Position(0, 0);
+		let end = new vscode.Position(document.lineCount - 1, document.lineAt(document.lineCount - 1).text.length);
 		range = new vscode.Range(start, end);
 	}
 
-	var result: vscode.TextEdit[] = [];
+	let result: vscode.TextEdit[] = [];
 	
-	var content = document.getText(range);
+	let content = document.getText(range);
 	
 	if (!options) {
 		options = { insertSpaces: true, tabSize: 4 };
 	}
 	
-	var beutifyOptions : jsbeautify.IBeautifyCSSOptions = {
+	let beutifyOptions : jsbeautify.IBeautifyCSSOptions = {
 		indent_char: options.insertSpaces ? ' ' : '\t',
 		indent_size: options.insertSpaces ? options.tabSize : 1,
 		selector_separator_newline: false
 	}
 	
-	var formatted = jsbeautify.css_beautify(content, beutifyOptions);
+	let formatted = jsbeautify.css_beautify(content, beutifyOptions);
 	if (formatted) {
 		result.push(new vscode.TextEdit(range, formatted));
 	}
@@ -47,8 +47,8 @@ export function activate(context: vscode.ExtensionContext) {
 	}));
 	context.subscriptions.push(vscode.languages.registerDocumentRangeFormattingEditProvider('css', {
 		provideDocumentRangeFormattingEdits: (document, range, options, token) => {
-			var start = new vscode.Position(0, 0);
-			var end = new vscode.Position(document.lineCount - 1, document.lineAt(document.lineCount - 1).text.length);
+			let start = new vscode.Position(0, 0);
+			let end = new vscode.Position(document.lineCount - 1, document.lineAt(document.lineCount - 1).text.length);
 			return format(document, new vscode.Range(start, end), options)
 		}
 	}));	
