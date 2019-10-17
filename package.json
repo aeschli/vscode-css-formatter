@@ -39,7 +39,7 @@
 		"test": "npm run compile && node ./node_modules/vscode/bin/test"
 	},
 	"dependencies": {
-		"js-beautify": "1.7.4"
+		"js-beautify": "1.10.2"
 	},
 	"devDependencies": {
 		"typescript": "^2.5.3",
