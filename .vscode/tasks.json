@@ -6,22 +6,11 @@
         {
             "type": "npm",
             "script": "watch",
-            "problemMatcher": "$tsc-watch",
+            "group": "build",
             "isBackground": true,
-            "presentation": {
-                "reveal": "never"
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "type": "npm",
-            "script": "compile",
             "problemMatcher": [
-                "$tsc"
+              "$ts-webpack-watch"
             ]
-        }
+        }  
     ]
 }

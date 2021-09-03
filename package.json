@@ -25,26 +25,36 @@
 		"url": "https://github.com/aeschli/vscode-css-formatter"
 	},
 	"engines": {
-		"vscode": "^0.10.1"
+		"vscode": "^1.40.0"
 	},
 	"activationEvents": [
 		"onLanguage:css"
 	],
-	"main": "./out/extension",
+	"main": "./dist/extension-node",
+	"browser": "./dist/extension-web",
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"postinstall": "node ./node_modules/vscode/bin/install",
-		"test": "npm run compile && node ./node_modules/vscode/bin/test"
-	},
-	"dependencies": {
-		"js-beautify": "1.7.4"
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"test": "npm run compile && node ./dist/test/runTest.js",
+		"test-web": "npm run compile && vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=./dist/test/suite/index-web",
+		"package": "webpack --mode production --devtool hidden-source-map"
 	},
 	"devDependencies": {
-		"typescript": "^2.5.3",
-		"vscode": "^1.1.6",
-		"@types/node": "^7.0.43",
-		"@types/mocha": "^2.2.42"
+		"@types/mocha": "^9.0.0",
+		"@types/vscode": "^1.40.0",
+		"@types/webpack-env": "^1.16.0",
+		"@types/glob": "^7.1.4",
+		"js-beautify": "^1.14.0",
+		"typescript": "^4.4.2",
+		"ts-loader": "^9.2.2",
+		"webpack": "^5.38.1",
+		"webpack-cli": "^4.7.0",
+		"mocha": "^8.2.1",
+		"glob": "^7.1.7",
+		"@vscode/test-electron": "^1.6.2",
+		"@vscode/test-web": "^0.0.8",
+		"assert": "^2.0.0",
+		"process": "^0.11.10"
 	}
 }
