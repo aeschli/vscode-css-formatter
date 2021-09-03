@@ -42,7 +42,9 @@
 		"test": "npm run compile && npm run test-node && npm run test-web",
 		"test-node": "node ./dist/test/runTest.js",
 		"test-web": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=./dist/test/suite/index-web",
-		"package": "webpack --mode production --devtool hidden-source-map"
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"preversion": "npm test",
+		"postversion": "git push && git push --tags"
 	},
 	"devDependencies": {
 		"@types/mocha": "^9.0.0",
