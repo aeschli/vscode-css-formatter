@@ -2,7 +2,6 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es6",
-        "outDir": "out",
         "lib": [
             "es6"
         ],
@@ -11,6 +10,7 @@
     },
     "exclude": [
         "node_modules",
-        ".vscode-test"
+        ".vscode-test",
+        ".vscode-test-web"
     ]
 }
