@@ -2,7 +2,7 @@
 	"name": "vscode-css-formatter",
 	"displayName": "CSS Formatter",
 	"description": "Formatter for CSS",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"publisher": "aeschli",
 	"galleryBanner": {
 		"color": "#0000FF",
