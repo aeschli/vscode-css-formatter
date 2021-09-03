@@ -56,12 +56,12 @@ const webConfig = /** @type WebpackConfig */ {
 const nodeConfig = /** @type WebpackConfig */ {
     context: __dirname,
     mode: "none", // this leaves the source code as close as possible to the original (when packaging we set this to 'production')
-    target: "node", // extensions run in a webworker context
+    target: "node", // extensions run in a node context
     entry: {
-      "extension-node": "./src/extension.ts", // source of the extension main file
-      "test/suite/index-node": "./src/test/suite/index-node.ts", // source of the extension test runner
-      "test/suite/extension.test": "./src/test/suite/extension.test.ts", // source of the extension test
-      "test/runTest": "./src/test/runTest", // starts the test from the cli
+      "extension-node": "./src/extension.ts", // source of the node extension main file
+      "test/suite/index-node": "./src/test/suite/index-node.ts", // source of the node extension test runner
+      "test/suite/extension.test": "./src/test/suite/extension.test.ts", // create a sepaeate file for the tests, to be found by glob
+      "test/runTest": "./src/test/runTest", // starts the VS Code test runn (@vscode/test-electron)
     },
     output: {
       filename: "[name].js",
@@ -69,7 +69,7 @@ const nodeConfig = /** @type WebpackConfig */ {
       libraryTarget: "commonjs",
     },
     resolve: {
-      mainFields: ["module", "main"], // look for `browser` entry point in imported node modules
+      mainFields: ["module", "main"],
       extensions: [".ts", ".js"], // support ts-files and js-files
     },
     module: {
