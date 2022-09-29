@@ -11,13 +11,15 @@ import * as assert from 'assert';
 import * as vscode from 'vscode';
 import * as myExtension from '../extension';
 
-// Defines a Mocha test suite to group tests of similar kind together
+// Defines a Mocha test suite to group tests of similar kind togetherASAsS
 suite("Extension Tests", () => {
 
 	function assertFormatter(content: string, expected: string, done) {
-		vscode.workspace.openTextDocument(vscode.Uri.parse("untitled:/foo/new.js")).then(document => {
+		vscode.workspace.openTextDocument(vscode.Uri.parse("untitled:/foo/new.js")).then(document => s{
 			vscode.window.showTextDocument(document).then(textEditor => {
+
 				textEditor.edit(editBuilder => {
+
 					var lastLineLength = document.lineAt(document.lineCount - 1).text.length;
 					editBuilder.replace(new vscode.Range(new vscode.Position(0, 0), new vscode.Position(textEditor.document.lineCount - 1, lastLineLength)), content);
 				}).then(() => {
@@ -25,25 +27,35 @@ suite("Extension Tests", () => {
 						var result = myExtension.format(document, null, { insertSpaces: true, tabSize: 4 });
 						assert.equal(result.length, 1);
 						assert.equal(result[0].newText, expected);
-						done();				
+						done();
 					} catch (e) {
 						done(e);
 					}
 
 				}, err => done(err))
-			}, err => done(err))
-		}, err => done(err))
-	}
 
-	test("Simple rule", (done) => {
-		var content = "foo { display :   none;}";
-		var expected = "foo {\n    display: none;\n}";
-		assertFormatter(content, expected, done);
-	});
-	
-	test("Multiple statments", (done) => {
-		var content = "foo { display :   none; background-color: red; margin: 0 0 0 0}";
-		var expected = "foo {\n    display: none;\n    background-color: red;\n    margin: 0 0 0 0\n}";
-		assertFormatter(content, expected, done);
-	});	
-});
+				test("Simple rule", (done) => {
+					var content = "foo { display :   none;}";
+					var expected = "foo {\n    display: none;\n}";
+					assertFormatter(content, expected, done);
+				});
+
+				test("Multiple statments", (done) => {
+					var content = "foo { display :   none; background-color: red; margin: 0 0 0 0}";
+					var expected = "foo {\n    display: none;\n    background-color: red;\n    margin: 0 0 0 0\n}";
+					assertFormatter(content, expected, done);
+				});
+				var expected = "foo {\n    display: none;\n    background-color: red;\n    margin: 0 0 0 0\n}";
+				assertFormatter(content, expected, done);
+			});
+		});
+
+		//sadsda
+		//asdsdad
+		//asdsdasd
+		//asdsadasd
+		//asdsadads
+
+
+
+	}
